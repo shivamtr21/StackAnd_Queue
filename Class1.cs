@@ -8,73 +8,36 @@ namespace StackAndQueue
 {
     public class Class1
     {
-
-        public Node top;
-        public void StackWithLinkedList()
+        Node head = null;
+        internal void Enqueue(int data)
         {
-            this.top = null;
-        }
-
-        public void push(int value)
-        {
-            Node node = new Node(value);
-            if (this.top == null)
-            {
-                node.next = null;
-            }
+            Node node = new Node(data);
+            if (head == null)
+                head = node;
             else
             {
-                node.next = this.top;
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
             }
-            this.top = node;
-            Console.WriteLine("{0} pushed to stack", value);
+            Console.WriteLine("{0} inserted into queue ", node.data);
         }
-
-
-        public void Display()
+        internal void Display()
         {
-            Node temp = this.top;
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Queue is empty");
+                return;
+            }
             while (temp != null)
             {
-                Console.WriteLine(temp.data + " ");
+                Console.Write(temp.data + " ");
                 temp = temp.next;
             }
         }
-
-        //Peek top most element
-        public void Peek()
-        {
-            if (this.top == null)
-            {
-                Console.WriteLine("Stack is empty");
-                return;
-            }
-            Console.WriteLine($"{this.top.data} is the top of the stack ");
-        }
-
-        //Pop remove element
-        public void Pop()
-        {
-            if (this.top == null)
-            {
-                Console.WriteLine("Stack is empty,Deletion is not possible");
-                return;
-            }
-            Console.WriteLine($"Value poped is {this.top.data}");
-            this.top = this.top.next;
-        }
-
-        // Check Empty
-        public void IsEmpty()
-        {
-            while (this.top != null)
-            {
-                Peek();
-                Pop();
-            }
-        }
-
-
-
     }
 }
