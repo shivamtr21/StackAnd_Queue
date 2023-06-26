@@ -6,17 +6,19 @@ namespace StackAndQueue
     {
         public static void Main(string[] args)
         {
-            Class1 cls = new Class1();
+            Console.WriteLine("Welcome to Stack And Queue Program!");
+            Console.WriteLine("#####################");
+            Class1 obj = new Class1();
+            obj.push(70);
+            obj.push(30);
+            obj.push(56);
 
+            obj.Peek();
+            Console.WriteLine("After pop operation:");
+            obj.Pop();
+            obj.IsEmpty();
 
-            
-            cls.push(70);
-            cls.push(30);
-
-            cls.push(50);
-
-            cls.Display();
-
+            obj.Display();
 
 
 
