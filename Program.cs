@@ -10,10 +10,12 @@ namespace StackAndQueue
             Console.WriteLine("#####################");
             Class1 Queue = new Class1();
 
+
             Queue.Enqueue(56);
             Queue.Enqueue(30);
             Queue.Enqueue(70);
-            Queue.Display();
+            Queue.Dequeue();
+            Queue.Display(); ;
 
 
         }
